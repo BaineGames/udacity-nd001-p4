@@ -5,3 +5,6 @@ Project 4: Feed Reader Testing for Udacity Nano-degree Front End Web Developer
 - Clone or download the repo
 - Open [index.html](../master/index.html) in browser
 - View test results at bottom of page
+
+## Developer Notes
+- added extra expect statements where I felt was appropriate for DOM checks
