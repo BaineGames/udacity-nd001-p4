@@ -54,6 +54,7 @@ $(function () {
             const feedContainerChildren = document.querySelectorAll(".feed .entry").length;
             expect(feedContainerChildren).toBeDefined();
             expect(feedContainerChildren).not.toBe(0);
+            expect(feedContainerChildren).toBeGreaterThan(0);
         });
     });
 
@@ -61,15 +62,15 @@ $(function () {
         let initialFeedName;
         beforeEach(function (done) {
             loadFeed(0, function () {
-                initialFeedName = document.querySelector("h1").textContent;
-                expect(initialFeedName).toBeDefined();
+                initialFeedRender = document.querySelector(".feed").innerHTML;
+                expect(initialFeedRender).toBeDefined();
                 loadFeed(1, done);
             });
         });
         it('runs an intial load on feed 0', function () {
-            let newFeedName = document.querySelector("h1").textContent;
-            expect(newFeedName).toBeDefined();
-            expect(newFeedName).not.toBe(initialFeedName);
+            let newFeedRender = document.querySelector(".feed").innerHTML;
+            expect(newFeedRender).toBeDefined();
+            expect(newFeedRender).not.toBe(initialFeedRender);
         });
     });
 }());
